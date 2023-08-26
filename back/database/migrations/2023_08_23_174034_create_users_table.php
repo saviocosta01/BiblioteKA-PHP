@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("address");
             $table->boolean("lending_accesss")->default(true);
             $table->string("creation_date")->default(now());
+            $table->timestamps();
         });
     }
 
