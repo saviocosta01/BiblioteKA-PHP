@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CopyController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,4 +18,9 @@ Route::middleware('jwt.verify')->group(function () {
     Route::get("/books", [BookController::class, "list"]);
     Route::patch("/books/{id}", [BookController::class, "update"]);
     Route::delete("/books/{id}", [BookController::class, "remove"]);
+
+    Route::post("/copies/{id}", [CopyController::class, "create"]);
+    Route::get("/copies", [CopyController::class, "list"]);
+    Route::patch("/copies/{id}", [CopyController::class, "update"]);
+    Route::delete("/copies/{id}", [CopyController::class, "remove"]);
 });
