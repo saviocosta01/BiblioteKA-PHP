@@ -18,6 +18,12 @@ class CopyController extends Controller{
 
         return $copyService->listCopies();
     }
+
+    public function listCopy($id){
+        $copyService = new CopyService();
+
+        return $copyService->listCopyById($id);
+    }
     public function update(Request $request, $id){
         $copyService = new CopyService();
 
