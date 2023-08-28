@@ -24,6 +24,12 @@ class CopyService
     {
         return Copy::all();
     }
+
+    public function listCopyById($id)
+    {
+        $copy = Copy::find($id);
+        return $copy;
+    }
     public function updateCopy(array $data, $id)
     {
         $copy = Copy::find($id);

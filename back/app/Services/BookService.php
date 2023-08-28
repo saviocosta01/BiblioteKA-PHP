@@ -16,6 +16,10 @@ class BookService {
     public function listBooks(){
         return Book::all();
     }
+    public function listBookById($id){
+        $book = Book::find($id);
+        return $book;
+    }
     public function updateBook(array $data, $id){
         $findBook = Book::find($id);
         $findBook->fill($data);
