@@ -20,6 +20,12 @@ class BookController extends Controller{
 
         return $bookService->listBooks();
     }
+    public function listBook($id)
+    {
+        $bookService = new BookService();
+
+        return $bookService->listBookById($id);
+    }
     public function update(Request $request, $id)
     {
         $bookService = new BookService();
