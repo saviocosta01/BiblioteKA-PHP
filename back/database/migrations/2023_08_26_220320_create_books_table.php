@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->integer("year");
+            $table->string("img_book");
             $table->string("publication")->default(now());
             $table->timestamps();
 
