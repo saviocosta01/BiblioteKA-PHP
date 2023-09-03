@@ -12,8 +12,9 @@ export const UserProvider = ({children}: TChildren) => {
 
     const RegisterResponse = async(data: TUsers) => {
         try{
-            await api.post("/users", data)
+            const response = await api.post("/users", data)
             toast.success("Conta criada com sucesso")
+            console.log(response.data)
             navigate("/login")
 
         }catch(err){
